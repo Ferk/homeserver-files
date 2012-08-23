@@ -1,0 +1,169 @@
+
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #fff;
+    background-color: #334;
+    background-attachment: fixed;
+    background-size: 100%;
+    margin: 0;
+}
+p {
+    text-align: justify;
+}
+
+hr {
+    border: 0;
+    width: 80%;
+    padding: 15px;
+    color: #00f;
+}
+
+/** Headers **/
+header {
+    width: 100%;
+    height: 150px;
+    background-color: #151520;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+h1 {
+    font-family: Tangerine, Times, serif;
+    font-size: 5em;
+    width: 100%;
+    vertical-align: middle;
+    padding: 0;
+    margin: 0;
+}
+h1 a {
+    text-decoration: none;
+    color: #DFF;
+    margin: 0;
+}
+h1 img {
+    max-height: 100%;
+}
+
+/** Navigation List **/
+nav {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 2em;
+    max-height: 7%;
+    margin:0;
+    padding: 0;
+    background-color: #151520;
+    box-shadow: 0em 0.2em 1em black;
+}
+nav ul {
+    margin: 0 0 5px;
+}
+nav li {
+    list-style: none;
+    list-style-type: none;
+    display: inline;
+    margin: 1%;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+nav li a {
+    color: #FFF;
+    border-style: solid;
+    border-color: black;
+    border-width: 0.1em;
+    background-color: rgba(0,0,0,0.5);
+    padding: 0.3em;
+    text-decoration: none;
+    box-shadow: 1.5em rgba(0,0,0,0.5);
+    /* non-standard */
+    border-radius: 0.4em;
+    -webkit-transition: all 0.3s;
+}
+nav li a img {
+    vertical-align: -30%;
+    height: 95%;
+    width: auto;
+}
+nav li a em {
+    font-style: normal;
+    text-decoration: underline;
+}
+nav li a:hover {
+    border-color: #0000ff;
+    background:   #ffffff;
+    color:        #000000
+}
+nav li .nolink {
+    color: #999;
+}
+nav li .nolink:hover {
+    border-color:     #000;
+    background-color: rgba(0,0,0,0.5);
+    color:            #999;
+}
+
+/** Boxes **/
+body div {
+    width:95%;
+    margin: 2em auto;
+    background-color:rgba(255,255,255,0.9);
+    color:#000;
+    text-align: center;
+    padding:0.2em;
+    overflow:hidden;
+    /* non-standard */
+    border-radius: 1.2em;
+    -moz-border-radius: 1.2em;
+}
+p {
+    margin: 0.5em 5%;
+}
+body div h2 {
+    font-family: Andada, Times, serif;
+    font-size: 1.5em;
+    color: #00A;
+}
+
+/** Lists **/
+li {
+    text-align: left;
+    margin: 1em 3em;
+}
+
+
+/** Formularios **/
+form {
+    width: 50%;
+    margin: 2em auto;
+}
+form label {
+    display: block;
+    width: 30%;
+    float: left;
+    margin: 0.3em 0.5em;
+    text-align: right;
+}
+form input, form textarea, form select {
+    width: 60%;
+    border: 0.1em solid #006;
+    background: #ffc;
+    cursor:   pointer;
+}
+form input.submit {
+    width: auto;
+    padding: 0.5em 1em;
+    border: 0.1em solid #006;
+    background: #9cf;
+    font-size: 1.2em;
+}
+form input.submit:hover {
+    background: #005;
+    color:      #fff;
+    border-color: #fff;
+}

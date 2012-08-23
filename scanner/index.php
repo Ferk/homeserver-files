@@ -10,29 +10,26 @@ function printid(id, content) {
   var e = document.getElementById(id);
   e.innerHTML= content;
  }
-function scan() {
-  window.location = ".?res="+document.getElementById("res").value;
-  printid("controls","<h2>Escaneando<blink>...</blink></h2> <p>Espera mientras el scanner termina de realizar el barrido. El tiempo de espera será mayor si la resolución es alta.</p>");
-}
   </script>
 </head>
 <h1>Scanner</h1>
   
-<div id="controls">  
-  <input type="button" onclick="scan();" value="Escanear"/>
-  <input id="res" name="resolution percentage" type="range" required="true" min="30" max="300" value="100" onchange="printid('res-display',this.value);"/>
-  Resolution: <span id="res-display">100</span>
-</div>
+<form action="." method="post" id="controls">
+  <label for="resolution">Resolución: <span id="res-display">100</span>%</label>
+  <input name="resolution" type="range" required="true" min="30" max="300" value="100" onchange="printid('res-display',this.value);"/>
+  <br/><input type="submit" class="submit" value="Escanear" 
+        onclick='printid("info","<h2>Escaneando...</h2> <p>Espera mientras el scanner termina de realizar el barrido.</p><p>El tiempo de espera será mayor si la resolución es alta.</p>");this.parentElement.style.display="none";'/>
+</form>
   
-  <div>
-  <?php if( isset($_GET["res"]) ): ?>
+<div id="info">
+  <?php if( isset($_POST["resolution"]) ): ?>
   <h2>Resultado del escaneado</h2>
-  <p>A continuación se muestra la imagen resultado del escaneado realizado.</p>
+  <p>A continuación se muestra la imagen resultado del escaneado realizado bajo resolución <?php echo $_POST["resolution"]?>.</p>
   <p>Para descargarla, haz click derecho sobre ella y elige "Guardar imagen como..".</p>
   
   <?php
   //echo "./scanner ".$_GET["res"]."<br/>";
-  $fname= exec("./scan.sh ".$_GET["res"]);
+  $fname= exec("./scan.sh ".$_POST["resolution"]);
   echo "<img src=\"".$fname."\"/>";
   ?>
 
