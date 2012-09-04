@@ -5,6 +5,7 @@
 <head>
   <title>Scanner interface</title>
   <link rel="stylesheet" type="text/css" href="/style/default.css"/>
+  <link rel="icon" type="image/png" href="/style/favicon.png"/>
   <script>
 function printid(id, content) {
   var e = document.getElementById(id);
@@ -48,7 +49,7 @@ function printid(id, content) {
 <div>
 <h2>Escaneos anteriores:</h2>
 <pre>
-<?php echo shell_exec('for i in $(find *.png | tac); do echo "<a href=\"$i\">$i</a>";done  ');?>
+<?php echo shell_exec('for i in $(find scanimage* | tac); do echo "<a href=\"$i\">$i</a>";done  ');?>
 </pre>
 </div>
 

@@ -17,7 +17,8 @@ fi
 
 if scanimage -d "$DEVICE" $OPTS > "${FNAME}.pnm" 2> error.log
 then
-    convert "${FNAME}.pnm" "${FNAME}.png"
+    convert "${FNAME}.pnm" -crop 0x0+20+5 -fuzz 15% -trim "${FNAME}.png"
+    #convert "${FNAME}.pnm" "${FNAME}.png"
     echo "$FNAME.png"
     rm "${FNAME}.pnm"
     exit 0
